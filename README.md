@@ -103,10 +103,11 @@ These endpoints interact with shared tables and rely on the custom `TenantManage
 **POST**
 
 ```bash
-curl -X POST http://localhost:8002/api/rls/projects/ \
-     -H "X-Tenant-ID: tenant_a" \
-     -H "Content-Type: application/json" \
-     -d '{"name": "RLS Project One"}'
+Invoke-RestMethod -Uri "http://localhost:8002/api/rls/projects/" `
+  -Method POST `
+  -Headers @{ "X-Tenant-ID" = "tenant_a" } `
+  -ContentType "application/json" `
+  -Body '{"name": "RLS Project One"}'
 ```
 
 ### List Projects
@@ -114,8 +115,9 @@ curl -X POST http://localhost:8002/api/rls/projects/ \
 **GET**
 
 ```bash
-curl -X GET http://localhost:8002/api/rls/projects/ \
-     -H "X-Tenant-ID: tenant_a"
+Invoke-RestMethod -Uri "http://localhost:8002/api/rls/projects/" `
+  -Method GET `
+  -Headers @{ "X-Tenant-ID" = "tenant_a" }
 ```
 
 ## Part B: Schema Isolation Endpoints
@@ -131,10 +133,12 @@ SET search_path TO "schema_tenant_x";
 **POST**
 
 ```bash
-curl.exe -X POST "http://localhost:8002/api/schema/projects/" `
-  -H "X-Tenant-ID: tenant_b" `
-  -H "Content-Type: application/json" `
-  -d '{"name": "Tenant B Secret Project"}'
+Invoke-RestMethod -Uri "http://localhost:8002/api/schema/projects/" `
+  -Method POST `
+  -Headers @{ "X-Tenant-ID" = "tenant_b" } `
+  -ContentType "application/json" `
+  -Body '{"name": "Tenant B Secret Project"}'
+
 ```
 
 ### List Projects
@@ -142,8 +146,9 @@ curl.exe -X POST "http://localhost:8002/api/schema/projects/" `
 **GET**
 
 ```bash
-curl -X GET http://localhost:8002/api/schema/projects/ \
-     -H "X-Tenant-ID: tenant_b"
+Invoke-RestMethod -Uri "http://localhost:8002/api/schema/projects/" `
+  -Method GET `
+  -Headers @{ "X-Tenant-ID" = "tenant_b" }
 ```
 
 ##  Performance Benchmarks
