@@ -24,7 +24,7 @@ Before you begin, ensure you have the following installed on your host machine:
 Clone the project to your local machine and navigate into the project directory:
 
 ```bash
-https://github.com/Ravindra-Reddy27/Production-Ready-Multi-Tenant-Django-Application-with-PostgreSQL.git
+git clone https://github.com/Ravindra-Reddy27/Production-Ready-Multi-Tenant-Django-Application-with-PostgreSQL.git
 cd Production-Ready-Multi-Tenant-Django-Application-with-PostgreSQL
 ```
 
