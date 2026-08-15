@@ -1,0 +1,13 @@
+# Environment Variables
+.env
+
+# Generated Results
+results/benchmarks.json
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Local Database (just in case)
+db.sqlite3
